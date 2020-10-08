@@ -1,6 +1,6 @@
 # JS-MINI-PROJECTS
 
-## <a href="https://ilyakozak.github.io/js-mini-projects/sliding-puzzle">Advent Calendar</a>
+## <a href="https://ilyakozak.github.io/js-mini-projects/sliding-puzzle">Sliding Puzzle</a>
 
 ###### <a href="https://github.com/IlyaKozak/js-mini-projects/tree/master/sliding-puzzle">github</a>
 
