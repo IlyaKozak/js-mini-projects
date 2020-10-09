@@ -509,6 +509,7 @@ function loadGameHandler() {
   tilesStyle = savedGame.tilesStyle;
   if (tilesStyle === 'images') randomImageNumber = savedGame.randomImageNumber;
   renderBoard(savedGame.board.flat().reverse());
+  checkBoard();
 }
 
 function bestScoresHandler() {
