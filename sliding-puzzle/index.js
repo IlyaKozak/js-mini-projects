@@ -371,6 +371,8 @@ function renderBoard(arr) {
 // Event Handlers
 function boardSizeHandler(e) {
   const size = e.target.dataset.size;
+  if (menu.classList.contains('opened'))
+    document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 27 }));
   if (size > 0) {
     boardSize = Number(size);
     gameBoard.length = 0;
@@ -380,6 +382,8 @@ function boardSizeHandler(e) {
 
 function boardTilesStyleHandler(e) {
   const style = e.target.dataset.tilesstyle;
+  if (menu.classList.contains('opened'))
+    document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 27 }));
   if (style === 'numbers') {
     tilesStyle = 'numbers';
     startGame();
