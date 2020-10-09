@@ -458,7 +458,6 @@ function keyboardHandler(e) {
 
 function saveGameHandler() {
   if (!isMuted) clickSound.play();
-  if (overlay.childNodes.length > 1) return;
   updateState(gameBoard);
   const savedGameObj = {
     board: gameBoard,
@@ -468,8 +467,11 @@ function saveGameHandler() {
     timeCount,
     randomImageNumber
   };
+  if (menu.classList.contains('opened'))
+    document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 27 }));
   if (!gameIsPaused) pausePlayHandler();
-  const saveMessage = document.createTextNode('Gamed is Saved!');
+  const saveMessage = document.createTextNode('Game is Saved!');
+  overlay.innerHTML = overlayPlay;
   overlay.appendChild(saveMessage);
   setTimeout(
     () =>
@@ -482,9 +484,20 @@ function saveGameHandler() {
 function loadGameHandler() {
   if (!isMuted) clickSound.play();
   let savedGame = localStorage.getItem('savedGame');
-  if (!savedGame) return;
+  if (!savedGame) {
+    return;
+  }
+  if (menu.classList.contains('opened'))
+    document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 27 }));
   if (!gameIsPaused) pausePlayHandler();
+  const loadMessage = document.createTextNode('Game is Loaded!');
   overlay.innerHTML = overlayPlay;
+  overlay.appendChild(loadMessage);
+  setTimeout(
+    () =>
+      overlay.childNodes.length > 1 ? overlay.removeChild(loadMessage) : null,
+    1000
+  );
   savedGame = JSON.parse(localStorage.getItem('savedGame'));
   boardSize = savedGame.boardSize;
   movesCount = savedGame.movesCount;
@@ -495,6 +508,8 @@ function loadGameHandler() {
 }
 
 function bestScoresHandler() {
+  if (menu.classList.contains('opened'))
+    document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 27 }));
   if (!gameIsPaused) pausePlayHandler();
   const results = JSON.parse(localStorage.getItem('bestScores'));
   if (!results) {
