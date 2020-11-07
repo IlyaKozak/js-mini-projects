@@ -1,0 +1,227 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 12px;
+}
+
+p img {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 3px;
+}
+
+.use-keyboard-input {
+  display: block;
+  width: 90%;
+  margin: 15px auto 30px auto;
+  padding: 10px;
+  font-size: 20px;
+  height: calc(100vh - 380px);
+  min-height: 300px;
+}
+
+.keyboard {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 5px 0;
+  background: #004134;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  user-select: none;
+  transition: bottom 0.4s;
+}
+
+.keyboard__keys {
+  display: grid;
+  justify-content: center;
+  grid-gap: 6px;
+  grid-template-rows: repeat(10, 22.5px);
+  grid-template-columns: repeat(30, 22.5px);
+}
+
+.keyboard--hidden {
+  bottom: -100%;
+}
+
+.keyboard__keys {
+  text-align: center;
+}
+
+.keyboard__key {
+  height: 100%;
+  width: 100%;
+  margin: 3px;
+  border-radius: 4px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 1.05rem;
+  /* text-shadow: 0 2px 4px rgba(0, 0, 0, 1); */
+  outline: none;
+  cursor: pointer;
+  display: inline-flex; /* to align icon to center of key */
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent; /* to remove outline in mobile devices by touching key */
+  position: relative;
+  box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.31),
+    0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.keyboard__key:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.keyboard__key:active {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+.keyboard__key--active {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.keyboard__key--activatable::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+.keyboard__key--active::after {
+  background: #08ff00;
+}
+
+.keyboard__key--dark {
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: none;
+}
+
+.keyboard__key--dark:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.keyboard__key--rotate {
+  transform: rotate(-90deg);
+}
+
+#lang {
+  padding-left: 5px;
+}
+
+@media (max-width: 878px) {
+  .use-keyboard-input {
+    font-size: 18px;
+    height: calc(100vh - 350px);
+  }
+  .keyboard__keys {
+    grid-gap: 6px;
+    grid-template-rows: repeat(10, 20px);
+    grid-template-columns: repeat(30, 20px);
+  }
+
+  .keyboard__key {
+    font-size: 14px;
+  }
+
+  .keyboard__key--activatable::after {
+    top: 6px;
+    right: 6px;
+  }
+}
+
+@media (max-width: 800px) {
+  .use-keyboard-input {
+    font-size: 16px;
+    height: calc(100vh - 310px);
+  }
+  .keyboard__keys {
+    grid-gap: 5px;
+    grid-template-rows: repeat(10, 17px);
+    grid-template-columns: repeat(30, 17px);
+  }
+
+  .material-icons {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 705px) {
+  .use-keyboard-input {
+    font-size: 15px;
+    height: calc(100vh - 290px);
+  }
+  .keyboard__keys {
+    grid-template-rows: repeat(10, 15px);
+    grid-template-columns: repeat(30, 15px);
+  }
+
+  .keyboard__key--activatable::after {
+    top: 3px;
+    right: 3px;
+  }
+}
+
+@media (max-width: 650px) {
+  .use-keyboard-input {
+    font-size: 15px;
+    height: calc(100vh - 280px);
+  }
+
+  .keyboard__keys {
+    grid-gap: 4px;
+    grid-template-rows: repeat(10, 15px);
+    grid-template-columns: repeat(30, 15px);
+  }
+
+  .material-icons {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 580px) {
+  .use-keyboard-input {
+    height: calc(100vh - 260px);
+  }
+  .keyboard__keys {
+    grid-gap: 3px;
+    grid-template-rows: repeat(10, 14px);
+    grid-template-columns: repeat(30, 14px);
+  }
+}
+
+@media (max-width: 540px) {
+  .use-keyboard-input {
+    height: calc(100vh - 230px);
+  }
+  .keyboard__keys {
+    grid-template-rows: repeat(10, 11px);
+    grid-template-columns: repeat(30, 11px);
+  }
+
+  .material-icons {
+    font-size: 15px;
+  }
+
+  .keyboard__key--activatable::after {
+    top: 2px;
+    right: 2px;
+    width: 6px;
+    height: 6px;
+  }
+}

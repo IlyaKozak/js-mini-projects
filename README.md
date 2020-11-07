@@ -1,16 +1,24 @@
-## <a href="https://ilyakozak.github.io/js-mini-projects/calculator">Calculator</a>
-
-#### <a href="https://github.com/IlyaKozak/js-mini-projects/tree/master/calculator">github</a>
-
-<a href="https://ilyakozak.github.io/js-mini-projects/calculator"><img src="calculator.png" width="300"/></a><br />
-
----
-
 ## <a href="https://ilyakozak.github.io/js-mini-projects/sliding-puzzle">Sliding Puzzle</a>
 
 #### <a href="https://github.com/IlyaKozak/js-mini-projects/tree/master/sliding-puzzle">github</a>
 
 <a href="https://ilyakozak.github.io/js-mini-projects/sliding-puzzle"><img src="sliding-puzzle.png" width="300"/></a><br />
+
+---
+
+## <a href="https://ilyakozak.github.io/js-mini-projects/virtual-keyboard">Virtual Keyboard</a>
+
+#### <a href="https://github.com/IlyaKozak/js-mini-projects/tree/master/virtual-keyboard">github</a>
+
+<a href="https://ilyakozak.github.io/js-mini-projects/virtual-keyboard"><img src="virtual-keyboard.png" width="500"/></a><br />
+
+---
+
+## <a href="https://ilyakozak.github.io/js-mini-projects/calculator">Calculator</a>
+
+#### <a href="https://github.com/IlyaKozak/js-mini-projects/tree/master/calculator">github</a>
+
+<a href="https://ilyakozak.github.io/js-mini-projects/calculator"><img src="calculator.png" width="300"/></a><br />
 
 ---
 
